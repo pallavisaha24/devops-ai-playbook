@@ -75,7 +75,7 @@ DevOps is a cultural and technical movement that bridges the gap between softwar
 # The Steps to implement as Prerequisite
 
 1.  Install the Node,npm and Postgres service in your respective PCs ( can be done in free tier VMs as well )
-2.  Try deploying a basic todo app ( generate code using AI ) and then install the dependencies in package.json
+2.  Try deploying a basic todo app ( generate code using AI ) and then install the dependencies which is there in package.json
 3.  Check the yarn commmands ( can use npm as well )
 4.  Make it run and expose it on a port
 5.  Check the page in the web browser ( localhost:3000 or whichever port you gave )
