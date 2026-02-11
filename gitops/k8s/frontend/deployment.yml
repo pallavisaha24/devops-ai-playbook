@@ -4,7 +4,7 @@ metadata:
   name: frontend
   namespace: boutique
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: frontend
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/frontend:latest
+          image: 806148750549.dkr.ecr.ap-south-1.amazonaws.com/frontend:c2f2a93e34025dbd612c420b81f0575048a8629d
           ports:
             - containerPort: 3000
           env:
@@ -36,5 +36,3 @@ spec:
       targetPort: 3000
   type: ClusterIP
 
-
-kubectl port-forward svc/frontend 3000:3000 -n boutique

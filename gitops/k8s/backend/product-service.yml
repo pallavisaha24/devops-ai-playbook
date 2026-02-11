@@ -4,7 +4,7 @@ metadata:
   name: product-service
   namespace: boutique
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: product-service
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: product-service
-          image: ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/product-service:latest
+          image: 806148750549.dkr.ecr.ap-south-1.amazonaws.com/product-service:c2f2a93e34025dbd612c420b81f0575048a8629d
           ports:
             - containerPort: 3003
           env:

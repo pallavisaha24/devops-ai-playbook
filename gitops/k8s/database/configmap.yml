@@ -4,14 +4,12 @@ metadata:
   name: postgres-init-scripts
   namespace: boutique
 data:
-  10-create-databases.sh: |
-    #!/bin/bash
-    echo "Creating multiple databases..."
-    for db in auth_db products_db orders_db users_db; do
-      psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" <<-EOSQL
-        CREATE DATABASE $db;
-      EOSQL
-    done
+  data:
+  10-create-databases.sql: |
+    CREATE DATABASE auth_db;
+    CREATE DATABASE products_db;
+    CREATE DATABASE orders_db;
+    CREATE DATABASE users_db;
 
   20-init-schema.sql: |
     -- Example: Create tables in auth_db

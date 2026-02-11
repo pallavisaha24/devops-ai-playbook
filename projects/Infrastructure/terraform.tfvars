@@ -13,20 +13,25 @@ vpc_cidr = "10.1.0.0/16"
     name = "subnet-2",
     cidr_block = "10.1.2.0/24",
     availability_zone = "ap-south-1b"
+  },
+  {
+    name = "subnet-3",
+    cidr_block = "10.1.3.0/24",
+    availability_zone = "ap-south-1c"
   }
  ]
 
 cluster_name = "eks-cluster"
 node_group_name = "eks-node-group"
 
-instance_types = ["t3.micro"]
+instance_types = ["t3.large"]
 capacity_type  = "ON_DEMAND"
 
 desired_size = 1
 min_size     = 1
 max_size     = 2
 
-disk_size = 25
+disk_size = 30
 
 repositories = [
   "frontend",

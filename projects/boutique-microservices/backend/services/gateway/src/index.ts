@@ -7,7 +7,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
-const PORT = process.env.GATEWAY_PORT || 3001;
+const PORT: number = Number(process.env.GATEWAY_PORT) || 3001;
 
 app.use(helmet());
 app.use(cors());
@@ -57,7 +57,7 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
   res.status(500).json({ error: 'Internal server error' });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`API Gateway running on port ${PORT}`);
   console.log(`Proxying to services:`, services);
 });

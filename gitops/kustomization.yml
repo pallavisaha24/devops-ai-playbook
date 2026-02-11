@@ -1,13 +1,13 @@
 resources:
-  - namespace.yaml
-  - secrets.yaml
-  - k8s/database/init-scripts-configmap.yaml
-  - k8s/database/statefulset.yaml
-  - k8s/database/service.yaml
-  - k8s/backend/gateway.yaml
-  - k8s/backend/auth.yaml
-  - k8s/backend/product-service.yaml
-  - k8s/backend/order-service.yaml
-  - k8s/backend/orders.yaml
-  - k8s/backend/user-service.yaml
-  - k8s/frontend/deployment.yaml
+  - namespace.yml
+  - secrets.yml
+  - k8s/database/configmap.yml
+  - k8s/database/statefulset.yml
+  - k8s/database/service.yml
+  - k8s/backend/gateway.yml
+  - k8s/backend/auth.yml
+  - k8s/backend/product-service.yml
+  - k8s/backend/order-service.yml
+  - k8s/backend/orders.yml
+  - k8s/backend/user-service.yml
+  - k8s/frontend/deployment.yml

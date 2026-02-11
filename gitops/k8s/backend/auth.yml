@@ -4,7 +4,7 @@ metadata:
   name: auth
   namespace: boutique
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: auth
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: auth
-          image: ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/auth:latest
+          image: 806148750549.dkr.ecr.ap-south-1.amazonaws.com/auth:c2f2a93e34025dbd612c420b81f0575048a8629d
           ports:
             - containerPort: 3002
           env:

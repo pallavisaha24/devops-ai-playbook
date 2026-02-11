@@ -1,18 +1,12 @@
-resource "kubernetes_namespace" "argocd" {
+resource "kubernetes_namespace_v1" "argocd" {
   metadata {
     name = "argocd"
   }
 }
 
-resource "kubernetes_namespace" "app" {
-  metadata {
-    name = "microservices-app"
-  }
-}
-
 resource "helm_release" "argocd" {
   name       = "argocd"
-  namespace  = kubernetes_namespace.argocd.metadata[0].name
+  namespace  = kubernetes_namespace_v1.argocd.metadata[0].name
   repository = "https://argoproj.github.io/argo-helm"
   chart      = "argo-cd"
   version    = "6.7.0"
@@ -32,11 +26,5 @@ resource "helm_release" "argocd" {
         }
       }
     })
-  ]
-
-  depends_on = [
-    kubernetes_namespace.argocd,
-    kubernetes_namespace.app,
-    module.eks.aws_eks_node_group.node_group
   ]
 }
