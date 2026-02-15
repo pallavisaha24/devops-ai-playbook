@@ -23,6 +23,7 @@ jobs:
           - product-service
           - user-service
           - frontend
+          - database
 
     steps:
       - name: Checkout Code
