@@ -13,7 +13,7 @@ This guide outlines the steps to deploy the boutique microservices application o
 > - `AWS_ACCESS_KEY_ID`
 > - `AWS_SECRET_ACCESS_KEY`
 > - `AWS_REGION`
-> - Any other AWS-related secrets
+> - `AWS_ACCOUNT_ID`
 > 
 > Go to: **Settings → Secrets and variables → Actions** in your GitHub repository to update them.
 
@@ -47,7 +47,14 @@ npm install
 Build all services:
 
 ```bash
-npm run build
+npm run build:frontend
+npm run build:backend
+```
+Start the services :
+
+```bash
+npm run dev:frontend
+npm run dev:backend
 ```
 
 ### Step 3: Run with Docker Compose
@@ -132,7 +139,7 @@ alias k=kubectl
 
 ## Step 5: Update Image Tags
 
-1. Go to one ECR repository and copy the tag of one service
+1. Go to any one ECR repository and copy the tag of one service ( tag is the commit ID )
 2. Update the image tag in the deployment files:
    - `gitops/k8s/backend/` - for all backend services
    - `gitops/k8s/frontend/` - for frontend service
@@ -214,7 +221,7 @@ kubectl port-forward svc/kube-prometheus-stack-grafana 3100:80 -n monitoring
 ### Prometheus:
 
 ```bash
-kubectl port-forward svc/prometheus-service 9090:9090 -n monitoring
+kubectl port-forward svc/prometheus-service 9090:9090 -n monitoring ( not too sure with the service name ) 
 ```
 
 ---
@@ -230,7 +237,6 @@ kubectl get secret kube-prometheus-stack-grafana -n monitoring -o jsonpath="{.da
 ```
 
 - Username: `admin`
-- Password: `prom-operator`
 
 ### ArgoCD
 
