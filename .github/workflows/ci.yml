@@ -23,7 +23,6 @@ jobs:
           - product-service
           - user-service
           - frontend
-          - database
 
     steps:
       - name: Checkout Code
@@ -46,9 +45,6 @@ jobs:
         run: |
           if [ "${{ matrix.service }}" == "frontend" ]; then
             BUILD_PATH="projects/boutique-microservices/frontend"
-
-          elif [ "${{ matrix.service }}" == "database" ]; then
-            BUILD_PATH="projects/boutique-microservices/database"
           else
             BUILD_PATH="projects/boutique-microservices/backend/services/${{ matrix.service }}"
           fi
