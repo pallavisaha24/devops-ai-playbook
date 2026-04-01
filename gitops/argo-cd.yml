@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: 'https://github.com/vishakhasadhwani/DevOps-Practice-Guide.git'
     targetRevision: project-demo
-    path: boutique-microservices/k8s
+    path: gitops
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: boutique
