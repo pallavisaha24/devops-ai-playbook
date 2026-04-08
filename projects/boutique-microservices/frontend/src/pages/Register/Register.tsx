@@ -80,19 +80,16 @@ const Register: React.FC = () => {
     setLoading(true);
 
     try {
-      const response = await authService.register({
+      await authService.register({
         email: formData.email,
         password: formData.password,
         firstName: formData.firstName,
         lastName: formData.lastName,
       });
 
-      localStorage.setItem('accessToken', response.token);
-      localStorage.setItem('refreshToken', response.refreshToken);
-      
-      navigate('/');
+      navigate('/login');
     } catch (error: any) {
-      setError(error.response?.data?.message || 'Registration failed');
+      setError(error.response?.data?.error || error.response?.data?.message || 'Registration failed');
     } finally {
       setLoading(false);
     }
