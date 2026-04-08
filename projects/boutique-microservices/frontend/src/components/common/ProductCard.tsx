@@ -40,7 +40,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   onQuickView,
   variant = 'grid',
 }) => {
-  const isOutOfStock = product.inventory === 0;
+  const isOutOfStock = (product.inventory_quantity ?? product.inventory ?? 0) === 0;
 
   // Enhanced image URL handling with fallbacks
   const getImageSrc = (): string => {
@@ -289,7 +289,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         </Box>
         
         <Typography variant="caption" color="text.secondary">
-          {product.inventory > 0 ? `${product.inventory} in stock` : 'Out of stock'}
+          {(product.inventory_quantity ?? product.inventory ?? 0) > 0 ? `${product.inventory_quantity ?? product.inventory} in stock` : 'Out of stock'}
         </Typography>
       </CardContent>
 

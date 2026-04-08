@@ -8,6 +8,7 @@ export interface Product {
   category: string;
   brand?: string;
   inventory: number;
+  inventory_quantity?: number;
   rating?: number;
   reviewCount?: number;
   isNew?: boolean;
