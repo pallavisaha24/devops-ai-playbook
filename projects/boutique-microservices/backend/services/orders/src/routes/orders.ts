@@ -15,11 +15,11 @@ router.post('/', async (req, res) => {
     const orderItems: any[] = [];
 
     for (const item of items) {
-      const productResponse = await axios.get(`${PRODUCTS_SERVICE_URL}/products/${item.productId}`);
-      const product = productResponse.data;
-      
+      const productResponse = await axios.get(`${PRODUCTS_SERVICE_URL}/${item.productId}`);
+      const product = productResponse.data.data;
+
       totalAmount += product.price * item.quantity;
-      
+
       orderItems.push({
         product_id: item.productId,
         quantity: item.quantity,
