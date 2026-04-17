@@ -28,6 +28,29 @@ By the end of this series, you won't just know tools — you'll understand how r
 
 ---
 
+## Repository Structure
+
+```
+DevOps-Practice-Guide/
+├── docs/
+│   ├── part1-system-design.md     # System design foundations (Part 1)
+│   ├── part2-workflow.md          # Full workflow with AIOps (Part 2)
+│   └── claude-setup.md            # Claude Code + MCP server setup
+├── projects/
+│   ├── README.md                  # EKS deployment guide (Part 3)
+│   ├── boutique-microservices/    # The application (7 services)
+│   ├── Infrastructure/            # Terraform for AWS provisioning
+│   └── aiops-assistant/           # Bedrock Agent — Kira (Part 4)
+├── gitops/
+│   ├── argo-cd.yml                # ArgoCD Application manifest
+│   ├── kustomization.yml          # Kustomize entry point
+│   └── k8s/                       # All Kubernetes manifests
+└── .github/
+    └── workflows/ci.yml           # GitHub Actions CI pipeline
+```
+
+---
+
 ## Series Structure
 
 ### Part 1 — System Design Foundations
@@ -96,31 +119,6 @@ Once you implement the project:
 2. Deploy the system
 3. Troubleshoot the issues
 4. Share what you learned — and tag me so I know you're building along
-
----
-
-## Repository Structure
-
-```
-DevOps-Practice-Guide/
-├── docs/
-│   ├── part1-system-design.md     # System design foundations (Part 1)
-│   ├── part2-workflow.md          # Full workflow with AIOps (Part 2)
-│   ├── part3-demo.md              # Project walkthrough (Part 3)
-│   ├── part4-aiops.md             # AIOps deep dive (Part 4)
-│   └── claude-setup.md            # Claude Code + MCP server setup
-├── projects/
-│   ├── README.md                  # EKS deployment guide
-│   ├── boutique-microservices/    # The application (7 services)
-│   ├── Infrastructure/            # Terraform for AWS provisioning
-│   └── aiops-assistant/           # Bedrock Agent — Kira
-├── gitops/
-│   ├── argo-cd.yml                # ArgoCD Application manifest
-│   ├── kustomization.yml          # Kustomize entry point
-│   └── k8s/                       # All Kubernetes manifests
-└── .github/
-    └── workflows/ci.yml           # GitHub Actions CI pipeline
-```
 
 ---
 
