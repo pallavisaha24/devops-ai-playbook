@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: 'https://github.com/vishakhasadhwani/DevOps-Practice-Guide.git'
-    targetRevision: project-demo
+    targetRevision: main
     path: gitops
   destination:
     server: 'https://kubernetes.default.svc'
